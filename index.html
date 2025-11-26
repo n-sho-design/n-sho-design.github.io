@@ -4,8 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>【しょう】のポートフォリオ</title>
-    <!-- Tailwind CSSをCDNで読み込みます -->
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yGk6x3t+E5z75L+r8w74e1U0e7uA+qC7e5m87+q/oX2t3Wv06U9n1G1+8V85y9A9yFf0gG2n8yA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <script>
         // Tailwindのカスタム設定
         tailwind.config = {
@@ -16,7 +21,8 @@
                         'theme-color': '#00a0a0', 
                     },
                     fontFamily: {
-                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                        // フォントをLatoとNoto Sans JPに変更
+                        sans: ['Lato', 'Noto Sans JP', 'sans-serif'],
                     },
                 }
             }
@@ -38,8 +44,9 @@
             margin-bottom: 0.5rem;
         }
         .custom-ul li::before {
+            /* theme-colorの値をCSS変数から取得 */
             content: "★";
-            color: var(--theme-color);
+            color: #00a0a0; /* Tailwind configで設定した色を直接指定 */
             position: absolute;
             left: 0;
             top: 0;
@@ -48,30 +55,26 @@
 </head>
 <body class="p-6 bg-gray-50 font-sans text-gray-800">
 
-    <!-- メインコンテナ -->
     <div class="bg-white p-6 md:p-10 rounded-xl shadow-xl">
 
-        <!-- ページタイトルと名前 -->
-        <h1 class="text-center text-4xl font-extrabold text-theme-color mb-8 border-b-2 border-theme-color/50 pb-2">しょう</h1>
+        <img src="image_2.png" alt="プロフィール画像" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-theme-color shadow-lg object-cover">
+        <h1 class="text-center text-4xl font-black text-theme-color mb-8 border-b-2 border-theme-color/50 pb-2 tracking-wide">SHOU - PORTFOLIO</h1>
 
-        <!-- ==================== -->
-        <!-- About セクション -->
-        <!-- ==================== -->
         <section class="mb-10">
-            <h2 class="text-2xl font-bold text-theme-color border-b-2 border-dashed border-theme-color/50 pb-1 mb-4">About</h2>
+            <h2 class="text-2xl font-bold text-theme-color border-b-2 border-dashed border-theme-color/50 pb-1 mb-4">About 👨‍💻</h2>
             <p class="mb-4">
-                今年度から**ZEN大学に入学**し、新しい技術を学ぶ学生です。<br>
-                これまでの公務員としての勤務経験から培った、計画性や責任感を活かし、Web技術を中心に幅広い知識の習得を目指しています。
+                **現職公務員**として勤務を継続しながら、今年度から**ZEN大学に入学**し、新しい技術を学んでいます。<br>
+                これまでの公務員としての勤務経験から培った、**計画性や責任感、粘り強さ**を活かし、Web技術を中心に幅広い知識の習得を目指しています。
             </p>
 
             <h3 class="text-xl font-semibold text-theme-color mt-6 mb-3">Profile</h3>
             <ul class="custom-ul">
-                <li>名前（ハンドルネーム）：しょう</li>
-                  <img src="profile_image.png">
+                <li>名前（ハンドルネーム）：しょう (Shou)</li>
                 <li>所在地：東京</li>
+                <li>学習開始時期：2025年4月〜（ZEN大学入学時）</li>
             </ul>
 
-            <h3 class="text-xl font-semibold text-theme-color mt-6 mb-3">Skills (資格・免許)</h3>
+            <h3 class="text-xl font-semibold text-theme-color mt-6 mb-3">Skills & Licenses 🛠️</h3>
             <div class="overflow-x-auto">
                 <table class="w-full text-left rounded-lg overflow-hidden border border-gray-200">
                     <thead class="bg-theme-color text-white">
@@ -82,10 +85,16 @@
                     </thead>
                     <tbody>
                         <tr class="bg-gray-50 hover:bg-gray-100">
+                            <th class="p-3 font-medium text-gray-700 border-r border-gray-200">Web技術 (学習中)</th>
+                            <td class="p-3 border-l border-gray-200">
+                                **HTML5, CSS3** (Tailwind CSS, SCSS), **JavaScript** (ES6+), **Open Processing (p5.js)**
+                            </td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-100">
                             <th class="p-3 font-medium text-gray-700 border-r border-gray-200">資格</th>
                             <td class="p-3 border-l border-gray-200">1級土木施工管理技術者</td>
                         </tr>
-                        <tr class="bg-white hover:bg-gray-100">
+                        <tr class="bg-gray-50 hover:bg-gray-100">
                             <th class="p-3 font-medium text-gray-700 border-r border-gray-200">免許</th>
                             <td class="p-3 border-l border-gray-200">普通運転免許</td>
                         </tr>
@@ -94,51 +103,50 @@
             </div>
         </section>
 
-        <!-- ==================== -->
-        <!-- Works セクション -->
-        <!-- ==================== -->
         <section class="mb-10">
-            <h2 class="text-2xl font-bold text-theme-color border-b-2 border-dashed border-theme-color/50 pb-1 mb-4">Works</h2>
+            <h2 class="text-2xl font-bold text-theme-color border-b-2 border-dashed border-theme-color/50 pb-1 mb-4">Works 💼</h2>
             
             <p class="mb-4">
-                大学入学前は公務員として勤務しておりました。
+                公務員として勤務を継続しながら、Web技術の学習に励んでいます。
             </p>
             <div class="p-4 bg-gray-100 rounded-lg border border-gray-200 shadow-sm mb-6">
-                <h3 class="text-xl font-semibold text-theme-color mb-2">公務員としての勤務</h3>
+                <h3 class="text-xl font-semibold text-theme-color mb-2">公務員としての勤務 (2020年〜現在)</h3>
                 <p class="text-gray-700">
-                    約X年間、主に（具体的な業務内容を記入 - 例：土木管理、市民サービス、計画策定など）に関する業務に従事し、社会基盤の維持・運営に貢献してまいりました。
+                    **2020年から現在まで**、主に**土木管理**や**公共工事の計画策定・監督**に関する業務に従事し、社会基盤の維持・運営に貢献してまいりました。現場での安全管理や関係機関との調整を通じて、**問題解決能力**と**プロジェクト管理能力**を培いました。
                 </p>
             </div>
 
-            <!-- Open Processing 作品 -->
-            <h3 class="text-xl font-semibold text-theme-color mt-6 mb-3">Open Processing 作品</h3>
+            <h3 class="text-xl font-semibold text-theme-color mt-6 mb-3">Open Processing 作品 (Creative Coding) 🎨</h3>
             <p class="mb-4">
-                クリエイティブコーディング学習の一環として作成した作品です。
+                プログラミング（p5.js）によるクリエイティブコーディング学習の一環として作成した作品です。
             </p>
             <div class="flex justify-center bg-gray-100 p-4 rounded-lg shadow-sm border border-gray-200">
-                <!-- 実際の Sketch ID 822736 を使用して埋め込み -->
                 <iframe src="https://openprocessing.org/sketch/822736/embed/" width="400" height="250" frameborder="0" class="rounded-lg shadow-md max-w-full"></iframe>
             </div>
         </section>
 
 
-        <!-- ==================== -->
-        <!-- Contact セクション -->
-        <!-- ==================== -->
         <section class="mb-10">
-            <h2 class="text-2xl font-bold text-theme-color border-b-2 border-dashed border-theme-color/50 pb-1 mb-4">Contact</h2>
-            <p class="mb-4">ご連絡はこちらからお願いします。</p>
+            <h2 class="text-2xl font-bold text-theme-color border-b-2 border-dashed border-theme-color/50 pb-1 mb-4">Contact ✉️</h2>
+            <p class="mb-4">ご連絡はこちらからお願いします。お仕事のご相談や情報交換も歓迎です。</p>
             <ul class="custom-ul">
-                <li><a href="mailto:name@example.com" class="hover:underline text-theme-color">Mail</a></li>
-                <li><a href="https://twitter.com/n_yobikou" class="hover:underline text-theme-color">X(旧 Twitter)</a></li>
+                <li>
+                    <i class="fas fa-envelope mr-2 text-theme-color"></i>
+                    <a href="mailto:name@example.com" class="hover:underline text-theme-color font-medium">Mail</a>
+                </li>
+                <li>
+                    <i class="fab fa-twitter mr-2 text-theme-color"></i>
+                    <a href="https://twitter.com/n_yobikou" class="hover:underline text-theme-color font-medium">X (旧 Twitter)</a>
+                </li>
+                <li>
+                    <i class="fab fa-github mr-2 text-theme-color"></i>
+                    <a href="#" class="hover:underline text-theme-color font-medium">GitHub (作成予定)</a>
+                </li>
             </ul>
         </section>
 
-        <!-- ==================== -->
-        <!-- History セクション -->
-        <!-- ==================== -->
         <section class="mb-10">
-            <h2 class="text-2xl font-bold text-theme-color border-b-2 border-dashed border-theme-color/50 pb-1 mb-4">History</h2>
+            <h2 class="text-2xl font-bold text-theme-color border-b-2 border-dashed border-theme-color/50 pb-1 mb-4">History 📅</h2>
             <p class="mb-4">主な経歴です。</p>
             <div class="overflow-x-auto">
                 <table class="w-full text-left rounded-lg overflow-hidden border border-gray-200">
@@ -150,17 +158,21 @@
                     </thead>
                     <tbody>
                         <tr class="bg-gray-50 hover:bg-gray-100">
-                            <th class="p-3 font-medium text-gray-700 border-r border-gray-200">20XX 年</th>
-                            <td class="p-3 border-l border-gray-200">公務員として勤務開始</td>
+                            <th class="p-3 font-medium text-gray-700 border-r border-gray-200">2020 年</th>
+                            <td class="p-3 border-l border-gray-200">公務員として勤務開始（**現職**）</td>
                         </tr>
                         <tr class="bg-white hover:bg-gray-100">
-                            <th class="p-3 font-medium text-gray-700 border-r border-gray-200">2025 年</th>
-                            <td class="p-3 border-l border-gray-200">ZEN大学に入学</td>
+                            <th class="p-3 font-medium text-gray-700 border-r border-gray-200">2025 年 4 月</th>
+                            <td class="p-3 border-l border-gray-200">ZEN大学に入学（Web技術・情報科学の学習を開始）</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
+
+        <footer class="text-center text-gray-500 pt-8 border-t border-gray-200 mt-8 text-sm">
+            <p>&copy; 2025 Shou's Portfolio. All Rights Reserved.</p>
+        </footer>
 
     </div>
 
